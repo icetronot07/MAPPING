@@ -1,16 +1,16 @@
 """Draw the XAUUSD H4 mapping on top of the original chart screenshot.
 
-Usage:  python3 scripts/annotate.py
-Input:  assets/xauusd-h4-original.jpg
-Output: assets/xauusd-h4-mapping.png
+Usage:  python3 scripts/map_2026-11-05.py
+Input:  maps/2026-11-05/original.jpg
+Output: maps/2026-11-05/mapping.png
 """
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "assets" / "xauusd-h4-original.jpg"
-OUT = ROOT / "assets" / "xauusd-h4-mapping.png"
+SRC = ROOT / "maps" / "2026-11-05" / "original.jpg"
+OUT = ROOT / "maps" / "2026-11-05" / "mapping.png"
 
 # Price-axis calibration taken from the screenshot's labels
 # (4166.00 sits at y=258, 4111.30 at y=345  ->  0.6287 $ per pixel).
