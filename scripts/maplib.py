@@ -22,7 +22,7 @@ class Chart:
     font sizes and padding so the same layout reads well on bigger images.
     """
 
-    def __init__(self, src, price_a, y_a, price_b, y_b, right, scale=1.0):
+    def __init__(self, src, price_a, y_a, price_b, y_b, right, scale=1.0, light=False):
         self.base = Image.open(src).convert("RGBA")
         self.overlay = Image.new("RGBA", self.base.size, (0, 0, 0, 0))
         self.d = ImageDraw.Draw(self.overlay)
@@ -30,6 +30,8 @@ class Chart:
         self.per_px = (price_a - price_b) / (y_b - y_a)
         self.right = right
         self.k = scale
+        # label badge fill: dark on dark charts, near-white on light charts
+        self.badge = (250, 250, 252, 235) if light else (12, 12, 16, 215)
         self.f_s = ImageFont.truetype(FONT, round(12 * scale))
         self.f_m = ImageFont.truetype(FONT_B, round(13 * scale))
         self.f_l = ImageFont.truetype(FONT_B, round(15 * scale))
@@ -58,7 +60,7 @@ class Chart:
         pad = 3 * self.k
         b = self.d.textbbox((x, yy), text, font=font, anchor=anchor)
         self.d.rectangle([b[0] - pad, b[1] - pad, b[2] + pad, b[3] + pad],
-                         fill=(12, 12, 16, 215), outline=color + (220,))
+                         fill=self.badge, outline=color + (220,))
         self.d.text((x, yy), text, font=font, fill=color + (255,), anchor=anchor)
 
     def rlabel(self, price, text, color, font=None):
