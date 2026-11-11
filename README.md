@@ -4,6 +4,7 @@ XAUUSD and WTI chart mappings. Each one marks up a chart screenshot with key zon
 
 | Date | TF | Price | Bias | Mapping |
 |---|---|---|---|---|
+| 11 Nov 2026 | H4 | 4058.7 | Short-term bearish, sell the 4060–4077 retest *(10 Nov bull setup cancelled: low 4014)* | [maps/2026-11-11](maps/2026-11-11/README.md) |
 | 10 Nov 2026 · **WTI** | H4 | 86.57 | Bearish, sell the 87.40–88.80 retest | [maps/2026-11-10-wti](maps/2026-11-10-wti/README.md) |
 | 10 Nov 2026 | H4 | 4118.70 | Sideways 4100–4148, 3rd rejection at 4147 | [maps/2026-11-10](maps/2026-11-10/README.md) |
 | 9 Nov 2026 | H4 | 4121.56 | Bullish while 4026 holds, under 4147 double top | [maps/2026-11-09](maps/2026-11-09/README.md) |
